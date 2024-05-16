@@ -1,0 +1,60 @@
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+import random
+quotes = {
+    1: "The only way to do great work is to love what you do. - Steve Jobs",
+    2: "In the midst of chaos, there is also opportunity. - Sun Tzu",
+    3: "Believe you can and you're halfway there. - Theodore Roosevelt",
+    4: "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+    5: "The best way to predict the future is to invent it. - Alan Kay",
+    6: "Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
+    7: "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+    8: "Strive not to be a success, but rather to be of value. - Albert Einstein",
+    9: "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+    10: "It does not matter how slowly you go as long as you do not stop. - Confucius",
+    11: "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+    12: "What you get by achieving your goals is not as important as what you become by achieving your goals. - Zig Ziglar",
+    13: "You miss 100% of the shots you don't take. - Wayne Gretzky",
+    14: "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+    15: "It is never too late to be what you might have been. - George Eliot",
+    16: "Keep your face always toward the sunshine—and shadows will fall behind you. - Walt Whitman",
+    17: "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
+    18: "Opportunities don't happen, you create them. - Chris Grosser",
+    19: "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
+    20: "Don't let yesterday take up too much of today. - Will Rogers",
+    21: "The way to get started is to quit talking and begin doing. - Walt Disney",
+    22: "Life is what happens when you're busy making other plans. - John Lennon",
+    23: "The best revenge is massive success. - Frank Sinatra",
+    24: "Either you run the day, or the day runs you. - Jim Rohn",
+    25: "It’s not the years in your life that count. It’s the life in your years. - Abraham Lincoln",
+    26: "The only thing worse than being blind is having sight but no vision. - Helen Keller",
+    27: "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do. - Mark Twain",
+    28: "The only person you should try to be better than is the person you were yesterday. - Unknown",
+    29: "You must be the change you wish to see in the world. - Mahatma Gandhi",
+    30: "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+    31: "Life is either a daring adventure or nothing at all. - Helen Keller",
+    32: "The only impossible journey is the one you never begin. - Tony Robbins",
+    33: "Believe you can and you're halfway there. - Theodore Roosevelt",
+    34: "Everything you’ve ever wanted is on the other side of fear. - George Addair",
+    35: "Life shrinks or expands in proportion to one's courage. - Anais Nin",
+    36: "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+    37: "You can never cross the ocean until you have the courage to lose sight of the shore. - Christopher Columbus",
+    38: "The journey of a thousand miles begins with one step. - Lao Tzu",
+    39: "It does not matter how slowly you go as long as you do not stop. - Confucius",
+    40: "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
+    41: "What lies behind us and what lies before us are tiny matters compared to what lies within us. - Ralph Waldo Emerson",
+    42: "In the end, it's not the years in your life that count. It's the life in your years. - Abraham Lincoln",
+    43: "Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
+    44: "Believe you can and you're halfway there. - Theodore Roosevelt",
+    45: "The best way to predict the future is to invent it. - Alan Kay",
+    46: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. - Albert Schweitzer",
+    47: "The best revenge is massive success. - Frank Sinatra",
+    48: "It always seems impossible until it is done. - Nelson Mandela",
+    49: "Success is not how high you have climbed, but how you make a positive difference to the world. - Roy T. Bennett",
+    50: "Do not wait to strike till the iron is hot, but make it hot by striking. - William Butler Yeats"
+}
+@api_view(['GET'])
+def getData(request):
+    data=quotes[random.randint(1,50)]
+    return Response(data)
+
